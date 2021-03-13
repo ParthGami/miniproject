@@ -16,6 +16,7 @@ class App extends Component {
     this.factorial = this.factorial.bind(this)
     this.fact = this.fact.bind(this)
     this.naturalLog = this.naturalLog.bind(this)
+    this.power = this.power.bind(this)
   }
   
   squareRoot = (event) => {
@@ -53,15 +54,27 @@ class App extends Component {
     })
   }
 
+  power = (event) => {
+    const a = document.getElementById('number').value
+    const b = document.getElementById('power').value
+    const temp = Math.pow(a,b)
+    this.setState({
+      x:a,
+      answer:temp
+    })
+  }
+
   render(){
     return (
       <div className="App">
         <input type="number" id="number" placeholder="Enter a Number"></input>
+        <input type="number" id='power' placeholder='Enter power'></input>
         <Calculator 
         onclick = {this.squareRoot} 
         value = {this.state.answer}
         facto = {this.fact}
-        log = {this.naturalLog} />
+        log = {this.naturalLog}
+        pow = {this.power} />
       </div>
     )
   }

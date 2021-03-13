@@ -13,6 +13,7 @@ const calculator = (props) => {
             <input id='sr' name='sr' value={props.value}></input>
             <button type='button' onClick={ (event) => { props.onclick(event)}}>Square root</button>
             <button type='button' onClick = {(event) => {props.facto(event)}}>Factorial</button>
+            <button type='button' onClick = {(event) => {props.log(event)}}>Natural log</button>
         </div>
     )
 }

@@ -15,6 +15,7 @@ class App extends Component {
     this.squareRoot = this.squareRoot.bind(this)
     this.factorial = this.factorial.bind(this)
     this.fact = this.fact.bind(this)
+    this.naturalLog = this.naturalLog.bind(this)
   }
   
   squareRoot = (event) => {
@@ -43,6 +44,15 @@ class App extends Component {
       })
   }
 
+  naturalLog = (event) => {
+    const y = document.getElementById('number').value
+    const temp = Math.log(y)
+    this.setState({
+      x:y,
+      answer:temp
+    })
+  }
+
   render(){
     return (
       <div className="App">
@@ -50,7 +60,8 @@ class App extends Component {
         <Calculator 
         onclick = {this.squareRoot} 
         value = {this.state.answer}
-        facto = {this.fact} />
+        facto = {this.fact}
+        log = {this.naturalLog} />
       </div>
     )
   }
